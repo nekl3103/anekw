@@ -8,18 +8,17 @@ const { Header, Content, Footer } = Layout;
 
 const App = () => {
   const [info, setInfo] = useState(undefined);
-  const Api = (location) => {
+  const Api = location => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&lang=ru&units=metric&appid=5aa741a37ff6512516bcb3da3ea973f0`
     )
-      .then((res) => res.json())
-      .then((json) => setInfo(json));
+      .then(res => res.json())
+      .then(json => setInfo(json));
   };
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (pos) => Api(pos.coords),
-      (error) =>
-        alert("Пожалуйста, разрешите доступ к использованию Вашей геопозиции!")
+      pos => Api(pos.coords),
+      error => alert("Пожалуйста, разрешите доступ к использованию Вашей геопозиции!")
     );
   }, []);
   return (
@@ -30,10 +29,7 @@ const App = () => {
           <Menu.Item key="1">Главная</Menu.Item>
         </Menu>
       </Header>
-      <Content
-        className="site-layout"
-        style={{ padding: "0 50px", marginTop: 64 }}
-      >
+      <Content className="site-layout" style={{ padding: "0 50px", marginTop: 64 }}>
         <Breadcrumb style={{ margin: "16px 0" }}>
           <Breadcrumb.Item>Главная</Breadcrumb.Item>
           <Breadcrumb.Item>Погода в вашем городе</Breadcrumb.Item>
