@@ -1,0 +1,20 @@
+.CardDescriptions {
+  max-width: 300px;
+}
+.DescriptionsNew {
+  .ant-descriptions-item {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    max-width: 40px;
+    position: absolute;
+    left: -7px;
+    top: -9px;
+  }
+}
+
+.rowImgItem {
+  position: relative;
+  padding-left: 30px;
+}
