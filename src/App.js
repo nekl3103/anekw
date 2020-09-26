@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "antd/dist/antd.css";
-import "./App.scss";
+import styles from "./App.module.scss";
 import { Layout, Menu, Breadcrumb, message } from "antd";
 import WidgetWeather from "./components/WidgetWeather";
 
@@ -42,7 +42,7 @@ const App = () => {
   return (
     <Layout>
       <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
-        <div className="logo" />
+        <div className={styles.logo} />
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
           <Menu.Item key="1">Главная</Menu.Item>
         </Menu>
